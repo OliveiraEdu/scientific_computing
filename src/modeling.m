@@ -1,8 +1,10 @@
 close all;clear all;clc;
 
-%data = csvread('/home/eduardo/Documents/repo/matlab/EDO/datasets/ozone.csv')
-data = csvread('/home/eduardo/Documents/repo/matlab/EDO/datasets/energy_consumption.csv')
-%data = csvread('/home/eduardo/Documents/repo/matlab/EDO/datasets/vehicular_stopping.csv')
+% Sample dataset, pick one and uncomment.
+
+%data = csvread('ozone.csv')
+data = csvread('energy_consumption.csv')
+%data = csvread('vehicular_stopping.csv')
 
 [t,x,y] = read_prepare_data(data);
 
