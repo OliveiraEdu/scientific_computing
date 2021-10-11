@@ -1,3 +1,4 @@
+
 %Least Squares Method approximation
 %Based on Rawlings Chapter 3
 
@@ -13,7 +14,7 @@ function [yHat_model1, betaHat_model1] = linear_LSM(x,y);
   %Normal Equation
 
   betaHat_model1 = step3*step2;
-  
+
   %Residual
 
   yHat_model1 = x*betaHat_model1;
