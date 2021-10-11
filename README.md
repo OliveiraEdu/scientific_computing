@@ -43,3 +43,19 @@ Independent variable on column one.
 Dependent variable on column two.
 
 This a 2D evaluation.
+
+## References
+
+Mathematical modeling
+
+Stefan Heinz
+
+Springer
+
+Applied Regression Analysis: A Research Tool, Second Edition
+
+John O. Rawlings
+Sastry G. Pantula
+David A. Dickey
+
+Springer
