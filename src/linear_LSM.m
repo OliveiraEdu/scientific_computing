@@ -1,6 +1,7 @@
+%Least Squares Method approximation
 %Based on Rawlings Chapter 3
 
-function [yHat_model1, betaHat_model1] = linear_MMQ2(x,y);
+function [yHat_model1, betaHat_model1] = linear_LSM(x,y);
   fprintf('----------------- Least Squares Model -----------------\n')
   step1 = x.'*x;
 

@@ -6,9 +6,9 @@ data = csvread('/home/eduardo/Documents/repo/matlab/EDO/datasets/energy_consumpt
 
 [t,x,y] = read_prepare_data(data);
 
-[yHat_model1, betaHat_model1] = linear_MMQ2(x,y)
+[yHat_model1, betaHat_model1] = linear_LSM(x,y)
  
-[yHat_model2, betaHat_model2] = linear_two_points2(data)
+[yHat_model2, betaHat_model2] = linear_two_points(data)
 
 [resid_model1,   resid_model2] = statistical_eval(y, yHat_model1, yHat_model2, betaHat_model1, betaHat_model2);
 

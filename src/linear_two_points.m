@@ -1,6 +1,10 @@
-function [yHat_model2, betaHat_model2] = linear_two_points2(data);
+%Two points linear aproximation
+%based on Heinz, Chapter 1
+
+function [yHat_model2, betaHat_model2] = linear_two_points(data);
   fprintf('----------------- Two Points Model -----------------\n')
   
+  %Picks the second and the last points of x, f(x)
   l = length(data);
   o = l-1;
   p = l-o;

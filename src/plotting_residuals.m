@@ -1,3 +1,5 @@
+%Comparative plot of the two models residuals, aka forecast errrors
+
 function  plotting_residuals(x,resid_model1, resid_model2)
  figure
  

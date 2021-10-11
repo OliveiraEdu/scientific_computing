@@ -1,3 +1,5 @@
+%Evaluates the models in relation to MAPE, MSE and RSQ
+
 function [resid_model1,   resid_model2] = statistical_eval(y, yHat_model1, yHat_model2, betaHat_model1, betaHat_model2);
   fprintf('----------------- Statistical Evaluation of the Models -----------------\n')
   

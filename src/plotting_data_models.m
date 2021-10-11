@@ -1,3 +1,5 @@
+%Plots the data, and predicted values of the models
+
 function  plotting_data_models(data,x,y,yHat_model1,yHat_model2)
 
  scatter (data(:,1),data(:,2),'k','+','linewidth',2)
