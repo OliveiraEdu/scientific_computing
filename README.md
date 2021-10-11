@@ -1,6 +1,6 @@
 # Modeling (Octave and Matlab compatible)
 
-Given a dataset (csv UTF-8 formatted) this application evaluates the data and generates two linear models:
+Given a dataset this application evaluates the data and generates two linear models:
 
 Model 1 - Evaluation applies the Least Square Method and generates the linear model.
 
@@ -31,3 +31,15 @@ data - Stores the dataset, first column hold the values for the independent vari
 yHat_modeln - Stores the predicted values evaluated from the model n.
 
 betaHat_modeln - Stores the values for the angular coefficient and intercept for the linear function for the model n.
+
+## Requirements
+
+Dataset must be a csv UTF-8 formatted file, no headers.
+
+Single dependent variable.
+
+Independent variable on column one.
+
+Dependent variable on column two.
+
+This a 2D evaluation.
