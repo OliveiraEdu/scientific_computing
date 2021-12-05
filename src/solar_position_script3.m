@@ -1,6 +1,6 @@
 clear all; clc;
 
-day = 285 %day of the year
+day = 20 %day of the year
 
 hour =  [1 30] %hour of the day
 

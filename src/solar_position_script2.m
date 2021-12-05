@@ -1,29 +1,45 @@
 clear all;
 
-%day = 10 %day of the year
-
-%hour =  [1 30] %hour of the day
+d1 = 151+21 %Winter solstice, southern hemisphere
+d2 = 59 + 21 %Autumn/Spring equinox, southern hemisphere
+d4 = 334 + 21 %Summer solstice, southern hemisphere
 
 day = [1:365]' %day of the year
 
-hsa =  [0:0.1667:24] %hour of the day
+hod =  [0:1/6:24] %hour of the day
 
-LAT = -27.6451741 %location's latitude
+hsa = hod*15-180 %solar angle
 
-f = 360*day/365
+LAT = -27.6451741 %location's latitude 
 
-%delta =  0.3964 + 3.631*sind(f) - 22.97*cosd(f) + 0.03838 * sind(2*f) - 0.3885 * cosd(2*f) + 0.07659 * sind(3*f) - 0.1587*cosd(3*f) - 0.01021 * cosd(4*f) 
+sin_delta = -(0.39779*cosd(0.98565*(day+10)+1.9114*sind(0.98565*(day-2)))) 
 
-delta_rad = 0.409*sin((2*pi*day/365)-1.39)
-delta = rad2deg(delta_rad)
+delta = asind(sin_delta) %solar declination angle
 
-%hsa = hour(:,1) + hour(:,2)/60 %hourly solar angle, converts hour and minute of the day to decimal notation
+sin_alpha = sin_delta*sind(LAT)+cosd(delta)*cosd(LAT)*cosd(hsa)
 
-cos_zenite = sind(LAT) * sind(delta) + cosd(LAT)*cosd(delta)*cosd(hsa)
+alpha = asind(sin_alpha) %solar elevation
 
-zenite = acosd(cos_zenite) %solar azimute
+plot(day, delta, 'b','linewidth',2)
+%ylim([0 90]);
+xlabel('Dia do Ano');
+ylabel('Declinação Solar (graus)');
+title('Percurso Solar');
+grid
 
-sin_elevation = cosd(delta)*sind(hsa)/sind(zenite)
+figure
 
-elevation = asind(sin_elevation) %solar elevation angle
+plot(hod, alpha(d1,:), 'r','linewidth',2)
+hold
+plot(hod, alpha(d2,:), 'g','linewidth',2)
+%plot(hod, alpha(d3,:), 'o','linewidth',2)
+plot(hod, alpha(d4,:), 'b','linewidth',2)
+ylim([0 90]);
 
+legend('Solstício de verão' ,'Equinócios','Solstício de inverno' )
+
+
+xlabel('Hora do dia');
+ylabel('Elevação Solar (graus)');
+title('Posição Solar');
+grid

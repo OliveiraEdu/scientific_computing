@@ -1,8 +1,8 @@
 clear all; %clc;
 
-%day =  [1:365]' %day of the year
+day =  [1:365]' %day of the year
 
-day = 286
+%day = 286
 hour = [16 35]
 
 
@@ -16,7 +16,7 @@ LAT =  -27.647303 %location's latitude
 
 delta = 23.45 * sind((360*(284+day))/365)
 
-%plot (day, delta)
+plot (day, delta)
 
 %Goswami, 2015
 
