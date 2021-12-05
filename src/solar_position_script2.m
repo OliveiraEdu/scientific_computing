@@ -1,8 +1,12 @@
 clear all;
 
-d1 = 151+21 %Winter solstice, southern hemisphere
-d2 = 59 + 21 %Autumn/Spring equinox, southern hemisphere
-d4 = 334 + 21 %Summer solstice, southern hemisphere
+c = clock()
+
+d1 = day_number(21,06) %Winter solstice, southern hemisphere
+d2 = day_number(20,3) %Autumn equinox, southern hemisphere
+d3 = day_number(22,9) %Spring equinox, southern hemisphere
+d4 = day_number(21,12) %Summer solstice, southern hemisphere
+d5 = day_number(c(1,3),c(1,2)) %Today
 
 day = [1:365]' %day of the year
 
@@ -29,15 +33,15 @@ grid
 
 figure
 
-plot(hod, alpha(d1,:), 'r','linewidth',2)
+plot(hod, alpha(d1,:), 'g','linewidth',2)
 hold
-plot(hod, alpha(d2,:), 'g','linewidth',2)
-%plot(hod, alpha(d3,:), 'o','linewidth',2)
-plot(hod, alpha(d4,:), 'b','linewidth',2)
+plot(hod, alpha(d2,:), 'b','linewidth',2)
+plot(hod, alpha(d3,:), 'b','linewidth',2)
+plot(hod, alpha(d4,:), 'c','linewidth',2)
+plot(hod, alpha(d5,:), 'm','linewidth',2)
 ylim([0 90]);
 
-legend('Solstício de verão' ,'Equinócios','Solstício de inverno' )
-
+legend('Solstício de inverno' ,'Equinócio de Outono','Equinócio de Primavera','Solstício de verão','Hoje' )
 
 xlabel('Hora do dia');
 ylabel('Elevação Solar (graus)');
